@@ -16,8 +16,8 @@ class CreatePlayersRating extends Migration
         //
         Schema::create('players_rating', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('player_num')->unsigned();
-            $table->foreign('player_num')->references('player_num')->on('players');
+            $table->integer('player_num');
+            $table->string('position', 20);
             $table->integer('skills');
             $table->integer('phyical');
             $table->integer('attack');

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class player extends Model
+class teams_rating extends Model
 {
     //
 }
