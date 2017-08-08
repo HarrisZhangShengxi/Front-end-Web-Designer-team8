@@ -21,7 +21,7 @@ class CreateTeams extends Migration
             $table->integer('goals');
             $table->integer('passing_accuracy%');
             $table->integer('assists');
-            $table->integer('tackle');
+            $table->integer('save');
             $table->integer('tackle_success%');
             $table->integer('yellow_card');
             $table->integer('red_card');
