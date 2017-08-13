@@ -26,3 +26,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// team rating function
+Route::get("/teamList", "TeamController@teamList");
+Route::get("/teamDetail", "TeamController@teamDetail");
+Route::post('/savingRating', 'TeamController@saveRating');
+
