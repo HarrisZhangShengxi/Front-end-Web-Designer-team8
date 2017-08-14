@@ -8,14 +8,13 @@ class Team extends Model
 {
     //
     protected $fillable = [
-        'team_num', 'name', 'shooting_accuracy%', 'goals', 'passing_accuracy%',
-        'assists', 'tackle', 'tackle_accuracy%', 'yellow_card', 'red_card',
-        'remember_tocken',
+        'id', 'name', 'shooting_accuracy', 'goals', 'passing_accuracy',
+        'assists', 'tackle', 'tackle_accuracy', 'yellow_card', 'red_card',
     ];
 
     //
     protected $hidden = [
-        'created_at', 'updated_at',
+        'created_at', 'updated_at', 'remember_token',
     ];
 
 

@@ -283,7 +283,7 @@ CREATE TABLE `teams` (
 LOCK TABLES `teams` WRITE;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
 
-INSERT INTO `teams` (`team_num`, `name`, `shooting_accuracy%`, `goals`, `passing_accuracy%`, `assists`, `save`, `tackle_success%`, `yellow_card`, `red_card`, `remember_token`, `created_at`, `updated_at`)
+INSERT INTO `teams` (id, `name`, shooting_accuracy, `goals`, passing_accuracy, `assists`, `save`, tackle_success, `yellow_card`, `red_card`, `remember_token`, `created_at`, `updated_at`)
 VALUES
 	(1,'Chelsea',34,1645,83,207536,391,76,1536,74,NULL,NULL,NULL),
 	(2,'Arsenal',36,1698,84,222156,463,74,1417,84,NULL,NULL,NULL),
