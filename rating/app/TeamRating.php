@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class teams extends Model
+class TeamRating extends Model
 {
     //
     protected $fillable = [
@@ -23,20 +23,22 @@ class teams extends Model
 
     public static function saveRating(Request $request) {
         $teamratingId = $request->get("teamratingId");
-        $teamNum = $request->get("teamNum");
-//        $attack = $request->get("attackRating");
-        $attackRating = $request->get("attackRating");
+        $teamId = $request->get("teamId");
+        $attack = $request->get("attack");
+//        $attackRating = $request->get("attackRating");
         $defence = $request->get("defence");
-        $teamPlay = $request->get("defence");
+        $teamPlay = $request->get("teamplay");
         $discipline = $request->get("discipline");
+        $comment = $request->get("comment");
 
         $saveResult = \App\TeamRating::create([
-            "id"=> $teamratingId,
-            "teamNum"=> $teamNum,
-            "attack" => $attackRating,
+//            "id"=> $teamratingId,
+            "team_id"=> $teamId,
+            "attack" => $attack,
             "defence" => $defence,
-            "teamPlay" => $teamPlay,
+            "team_play" => $teamPlay,
             "discipline"=> $discipline,
+            "comment"=> $comment,
         ]);
 
         return $saveResult;

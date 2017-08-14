@@ -25,11 +25,11 @@ class TeamController extends Controller
     //Team detail
     public function teamDetail(Request $request){
         $id = $request->get('id');
-//        if ($id) {
+        if ($id) {
             $teamDetail = Team::find($id);
-            return view('teamDetail')->with('teamDetail', $teamDetail);
-//        }
-//        return view('teamDetail');
+            return view('teamDetail')->with('team', $teamDetail);
+        }
+        return view('teamDetail');
     }
 
     //save rating
