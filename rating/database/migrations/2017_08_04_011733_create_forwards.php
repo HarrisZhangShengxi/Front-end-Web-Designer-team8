@@ -27,7 +27,7 @@ class CreateForwards extends Migration
             $table->string('passing_accuracy');
             $table->integer('assists');
             $table->integer('foul_conceded');
-            $table->string('tackle_success');
+            $table->string('tackles');
             $table->integer('yellow/red_card');
             $table->rememberToken();
             $table->timestamps();
