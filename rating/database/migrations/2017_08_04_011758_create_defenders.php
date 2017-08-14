@@ -22,7 +22,7 @@ class CreateDefenders extends Migration
             $table->string('country', 50);
             $table->string('team', 50);
             $table->integer('appearance');
-            $table->integer('shooting_accuracy%');
+            $table->string('shooting_accuracy');
             $table->integer('goals');
             $table->integer('goal_conceded');
             $table->integer('interceptions');

@@ -22,12 +22,12 @@ class CreateMidfielders extends Migration
             $table->string('country', 50);
             $table->string('team', 50);
             $table->integer('appearance');
-            $table->integer('shooting_accuracy%');
+            $table->string('shooting_accuracy');
             $table->integer('goals');
-            $table->integer('passing_accuracy%');
+            $table->string('passing_accuracy');
             $table->integer('assists');
             $table->integer('foul_conceded');
-            $table->integer('tackle_success%');
+            $table->string('tackle_success');
             $table->integer('yellow/red_card');
             $table->rememberToken();
             $table->timestamps();

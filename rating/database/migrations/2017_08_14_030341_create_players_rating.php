@@ -20,12 +20,12 @@ class CreatePlayersRating extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('player_num');
             $table->string('position', 20);
-            $table->integer('skills');
-            $table->integer('phyical');
-            $table->integer('attack');
-            $table->integer('defence');
-            $table->integer('weak_foot');
-            $table->integer('team_play');
+            $table->float('skills');
+            $table->float('phyical');
+            $table->float('attack');
+            $table->float('defence');
+            $table->float('weak_foot');
+            $table->float('team_play');
             $table->string('comment', 5000);
             $table->rememberToken();
             $table->timestamps();

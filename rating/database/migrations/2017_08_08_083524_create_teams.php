@@ -17,12 +17,12 @@ class CreateTeams extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('team_num');
             $table->string('name', 50)->unique();
-            $table->integer('shooting_accuracy%');
+            $table->string('shooting_accuracy');
             $table->integer('goals');
-            $table->integer('passing_accuracy%');
+            $table->string('passing_accuracy');
             $table->integer('assists');
             $table->integer('save');
-            $table->integer('tackle_success%');
+            $table->string('tackle_success');
             $table->integer('yellow_card');
             $table->integer('red_card');
             $table->rememberToken();

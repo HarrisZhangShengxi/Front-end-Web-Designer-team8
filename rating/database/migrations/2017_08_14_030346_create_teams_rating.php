@@ -20,10 +20,10 @@ class CreateTeamsRating extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('team_num')->unsigned();
             $table->foreign('team_num')->references('team_num')->on('teams');
-            $table->integer('attack');
-            $table->integer('defence');
-            $table->integer('team_play');
-            $table->integer('discipline');
+            $table->float('attack');
+            $table->float('defence');
+            $table->float('team_play');
+            $table->float('discipline');
             $table->string('comment', 5000);
             $table->rememberToken();
         });
