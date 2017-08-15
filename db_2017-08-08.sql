@@ -50,7 +50,7 @@ CREATE TABLE `defenders` (
 LOCK TABLES `defenders` WRITE;
 /*!40000 ALTER TABLE `defenders` DISABLE KEYS */;
 
-INSERT INTO `defenders` (`dplayer_num`, `name`, `age`, `height`, `country`, `team`, `appearance`, `shooting_accuracy%`, `goals`, `goal_conceded`, `interceptions`, `total_clearances`, `tackle_success`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
+INSERT INTO `defenders` (dplayer_id, `name`, `age`, `height`, `country`, `team`, `appearance`, shooting_accuracy, `goals`, `goal_conceded`, `interceptions`, `total_clearances`, `tackle_success`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
 VALUES
 	(1,'David Luiz',30,189,'Brazil','Chelsea',114,24,7,86,253,521,121,28,NULL,NULL,NULL),
 	(2,'Gary Cahill',32,193,'England','Chelsea',320,27,27,393,407,2614,325,38,NULL,NULL,NULL),
@@ -117,7 +117,7 @@ CREATE TABLE `forwards` (
 LOCK TABLES `forwards` WRITE;
 /*!40000 ALTER TABLE `forwards` DISABLE KEYS */;
 
-INSERT INTO `forwards` (`fplayer_num`, `name`, `age`, `height`, `country`, `team`, `appearance`, `shooting_accuracy%`, `goals`, `passing_accuracy%`, `assists`, `foul_conceded`, `tackle_success%`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
+INSERT INTO `forwards` (fplayer_id, `name`, `age`, `height`, `country`, `team`, `appearance`, shooting_accuracy, `goals`, passing_accuracy, `assists`, `foul_conceded`, tackle_success, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
 VALUES
 	(1,'Michy Batshuayi',25,185,'Belgium','Chelsea',20,47,5,83,3,8,50,0,NULL,NULL,NULL),
 	(2,'Diego Costa',29,186,'Spain','Chelsea',89,42,52,75,16,107,55,52,NULL,NULL,NULL),
@@ -168,7 +168,7 @@ CREATE TABLE `goalkeepers` (
 LOCK TABLES `goalkeepers` WRITE;
 /*!40000 ALTER TABLE `goalkeepers` DISABLE KEYS */;
 
-INSERT INTO `goalkeepers` (`gplayer_num`, `name`, `age`, `height`, `country`, `team`, `appearance`, `clean_sheets`, `goal_conceded`, `penalty_saves`, `distribution_accuracy`, `total_saves`, `total_clearances`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
+INSERT INTO `goalkeepers` (gplayer_id, `name`, `age`, `height`, `country`, `team`, `appearance`, `clean_sheets`, `goal_conceded`, `penalty_saves`, `distribution_accuracy`, `total_saves`, `total_clearances`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
 VALUES
 	(1,'Thibaut Courtois',25,199,'Belgium','Chelsea',91,33,87,1,1,209,48,5,NULL,NULL,NULL),
 	(2,'Willy Caballero',35,186,'Argentina','Chelsea',23,7,22,1,0,52,13,0,NULL,NULL,NULL),
@@ -215,7 +215,7 @@ CREATE TABLE `midfielders` (
 LOCK TABLES `midfielders` WRITE;
 /*!40000 ALTER TABLE `midfielders` DISABLE KEYS */;
 
-INSERT INTO `midfielders` (`mplayer_num`, `name`, `age`, `height`, `country`, `team`, `appearance`, `shooting_accuracy%`, `goals`, `passing_accuracy%`, `assists`, `foul_conceded`, `tackle_success%`, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
+INSERT INTO `midfielders` (mplayer_id, `name`, `age`, `height`, `country`, `team`, `appearance`, shooting_accuracy, `goals`, passing_accuracy, `assists`, `foul_conceded`, tackle_success, `yellow/red_card`, `remember_token`, `created_at`, `updated_at`)
 VALUES
 	(1,'Pedro',30,169,'Spain','Chelsea',64,28,16,82,11,33,77,9,NULL,NULL,NULL),
 	(2,'Cesc Fabregas',30,180,'Spain','Chelsea',312,36,48,85,107,178,75,68,NULL,NULL,NULL),
