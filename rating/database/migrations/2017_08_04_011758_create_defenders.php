@@ -15,14 +15,14 @@ class CreateDefenders extends Migration
     {
         //
         Schema::create('defenders', function (Blueprint $table) {
-            $table->increments('dplayer_num');
+            $table->increments('dplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');
             $table->string('country', 50);
             $table->string('team', 50);
             $table->integer('appearance');
-            $table->integer('shooting_accuracy%');
+            $table->string('shooting_accuracy');
             $table->integer('goals');
             $table->integer('goal_conceded');
             $table->integer('interceptions');

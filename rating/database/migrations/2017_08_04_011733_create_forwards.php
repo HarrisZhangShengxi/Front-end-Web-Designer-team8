@@ -15,19 +15,19 @@ class CreateForwards extends Migration
     {
         //
         Schema::create('forwards', function (Blueprint $table) {
-            $table->increments('fplayer_num');
+            $table->increments('fplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');
             $table->string('country', 50);
             $table->string('team', 50);
             $table->integer('appearance');
-            $table->integer('shooting_accuracy%');
+            $table->string('shooting_accuracy');
             $table->integer('goals');
-            $table->integer('passing_accuracy%');
+            $table->string('passing_accuracy');
             $table->integer('assists');
             $table->integer('foul_conceded');
-            $table->integer('tackle_success%');
+            $table->string('tackles');
             $table->integer('yellow/red_card');
             $table->rememberToken();
             $table->timestamps();
