@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeamsRating extends Migration
+class CreatePlayerratings extends Migration
 {
     /**
      * Run the migrations.
@@ -14,18 +14,21 @@ class CreateTeamsRating extends Migration
     public function up()
     {
         //
-        Schema::create('teams_rating', function (Blueprint $table) {
+        Schema::create('playerratings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('team_num')->unsigned();
-            $table->foreign('team_num')->references('team_num')->on('teams');
+            $table->integer('player_num');
+            $table->string('position', 20);
+            $table->float('skills');
+            $table->float('phyical');
             $table->float('attack');
             $table->float('defence');
+            $table->float('weak_foot');
             $table->float('team_play');
-            $table->float('discipline');
             $table->string('comment', 5000);
             $table->rememberToken();
+            $table->timestamps();
         });
     }
 

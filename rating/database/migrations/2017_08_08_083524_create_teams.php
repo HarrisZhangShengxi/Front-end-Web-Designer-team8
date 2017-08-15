@@ -15,7 +15,7 @@ class CreateTeams extends Migration
     {
         //
         Schema::create('teams', function (Blueprint $table) {
-            $table->increments('team_num');
+            $table->increments('team_id');
             $table->string('name', 50)->unique();
             $table->string('shooting_accuracy');
             $table->integer('goals');

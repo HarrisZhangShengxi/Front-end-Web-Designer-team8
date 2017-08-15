@@ -15,7 +15,7 @@ class CreateForwards extends Migration
     {
         //
         Schema::create('forwards', function (Blueprint $table) {
-            $table->increments('fplayer_num');
+            $table->increments('fplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');

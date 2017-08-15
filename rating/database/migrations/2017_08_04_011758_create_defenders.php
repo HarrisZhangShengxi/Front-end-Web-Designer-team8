@@ -15,7 +15,7 @@ class CreateDefenders extends Migration
     {
         //
         Schema::create('defenders', function (Blueprint $table) {
-            $table->increments('dplayer_num');
+            $table->increments('dplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');

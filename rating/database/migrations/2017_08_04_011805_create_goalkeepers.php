@@ -15,7 +15,7 @@ class CreateGoalkeepers extends Migration
     {
         //
         Schema::create('goalkeepers', function (Blueprint $table) {
-            $table->increments('gplayer_num');
+            $table->increments('gplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');

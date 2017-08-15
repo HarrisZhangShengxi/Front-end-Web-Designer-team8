@@ -15,7 +15,7 @@ class CreateMidfielders extends Migration
     {
         //
         Schema::create('midfielders', function (Blueprint $table) {
-            $table->increments('mplayer_num');
+            $table->increments('mplayer_id');
             $table->string('name', 50)->unique();
             $table->integer('age');
             $table->integer('height');
