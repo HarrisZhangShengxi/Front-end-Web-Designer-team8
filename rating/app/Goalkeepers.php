@@ -10,7 +10,7 @@ class Goalkeepers extends Model
     protected $fillable = [
         'name', 'age', 'height', 'country', 'team', 'appearance', 'clean_sheets',
         'goal_conceded', 'penalty_saves', 'distribution_accuracy', 'total_saves',
-        'total_clearances', 'yellow/red_card',
+        'total_clearances', 'yellow_red_card',
     ];
 
     //

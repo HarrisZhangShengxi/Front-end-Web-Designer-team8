@@ -5,29 +5,31 @@ namespace App\Http\Controllers;
 use App\Team;
 use App\TeamRating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeamController extends Controller
 {
 
     //display all teams
-    public function teamList() {
+    public static function teamList() {
         $teamlist = Team::all();
         return view('teamlist')->with('teamlist', $teamlist);
     }
 
-    //find team
-    public function index(Request $request) {
-        $id = $request->get("id");
-        $team = Team::find($id);
-        return view('team')->with("team", $team);
-    }
+//    //find team
+//    public function find_team(Request $request) {
+//        $content = $request->get('content');
+//        $team = Team::where('name', $content)->first();
+//        return view('teamDetail', compact('team'));
+//    }
 
     //Team detail
     public function teamDetail(Request $request){
         $id = $request->get('id');
         if ($id) {
-            $teamDetail = Team::find($id);
-            return view('teamDetail')->with('team', $teamDetail);
+            $team = Team::where('team_id', $id)->first();
+            return view('teamDetail', compact('team'));
+//            return view('teamDetail')->with('team', $team);
         }
         return view('teamDetail');
     }

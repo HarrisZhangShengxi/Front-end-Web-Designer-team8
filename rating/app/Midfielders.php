@@ -10,7 +10,7 @@ class Midfielders extends Model
     protected $fillable = [
         'name', 'age', 'height', 'country', 'team', 'appearance', 'shooting_accuracy',
         'goals', 'passing_accuracy', 'assists', 'foul_conceded',
-        'tackle_success', 'yellow/red_card',
+        'tackle_success', 'yellow_red_card',
     ];
 
     //

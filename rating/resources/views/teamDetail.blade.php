@@ -7,7 +7,7 @@
     Goals: {{$team->goals}}<br>
     Passing Accuracy: {{$team->passing_accuracy}}<br>
     Assists: {{$team->assists}}<br>
-    Tackle: {{$team->tackle}}<br>
+    Saves: {{$team->save}}<br>
     Tackle Success: {{$team->tackle_success}}<br>
     Yellow Card: {{$team->yellow_card}}<br>
     Red Card: {{$team->red_card}}<br>

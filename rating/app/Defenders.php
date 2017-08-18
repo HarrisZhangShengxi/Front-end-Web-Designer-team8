@@ -10,7 +10,7 @@ class Defenders extends Model
     protected $fillable = [
         'name', 'age', 'height', 'country', 'team', 'appearance', 'shooting_accuracy',
         'goals', 'goals_conceded', 'interceptions', 'total_clearances', 'tackle_success',
-        'yellow/red_card',
+        'yellow_red_card',
     ];
 
     //

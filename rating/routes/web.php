@@ -32,3 +32,9 @@ Route::get("/teamList", "TeamController@teamList");
 Route::get("/teamDetail", "TeamController@teamDetail");
 Route::post('/saveRating', 'TeamController@saveRating');
 
+//player rating function
+Route::get('/playerList', 'PlayerController@playerList');
+Route::get('/playerDetail', 'PlayerController@playerDetail');
+
+//Search
+Route::get("/search", "SearchController@find_team");

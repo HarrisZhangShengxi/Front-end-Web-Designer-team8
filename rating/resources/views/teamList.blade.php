@@ -20,7 +20,7 @@
             <col width="200">
         <tr>
             <td>
-                <a href="/teamDetail?id={{$item->id}}">
+                <a href="/teamDetail?id={{$item->team_id}}">
                     {{$item->name}}
                 </a>
             </td>
