@@ -7,13 +7,15 @@
     Goals: {{$team->goals}}<br>
     Passing Accuracy: {{$team->passing_accuracy}}<br>
     Assists: {{$team->assists}}<br>
-    Tackle: {{$team->tackle}}<br>
+    Save: {{$team->save}}<br>
     Tackle Success: {{$team->tackle_success}}<br>
     Yellow Card: {{$team->yellow_card}}<br>
     Red Card: {{$team->red_card}}<br>
     <hr>
-
-    <form action="/saveteamRating" method="post">
+    Former Rating:<br>
+    Overall:
+    <hr>
+    <form action="/saveTeamRating" method="post">
         {{csrf_field()}}
         Attack:
             <select title='team_rating' name="attack">

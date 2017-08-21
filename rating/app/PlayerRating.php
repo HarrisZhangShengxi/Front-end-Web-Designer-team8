@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class PlayerRating extends Model
 {
@@ -22,7 +23,7 @@ class PlayerRating extends Model
 
     public static function savePlayerRating(Request $request) {
 //        $teamratingId = $request->get("teamratingId");
-        $playerId = $request->get("gplayerId" or "dplayerId" or "fplayerId" or "mplayerId");
+        $playerId = $request->get("playerId");
         $attack = $request->get("attack");
 //        $attackRating = $request->get("attackRating");
         $defence = $request->get("defence");

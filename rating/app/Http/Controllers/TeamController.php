@@ -37,8 +37,8 @@ class TeamController extends Controller
     }
 
     //save rating
-    public function saveRating(Request $request) {
-        $saveResult = \App\TeamRating::saveRating($request);
+    public function saveTeamRating(Request $request) {
+        $saveResult = \App\TeamRating::saveTeamRating($request);
         echo $saveResult;
     }
 

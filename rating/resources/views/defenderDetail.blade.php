@@ -18,7 +18,7 @@
     Yellow/Red Card: {{$playerDetail->yellow_red_card}}<br>
     <hr>
 
-    <form action="/saveplayerRating" method="post">
+    <form action="/savePlayerRating" method="post">
         {{csrf_field()}}
         Skills:
         <select title='player_rating' name="skills">
@@ -28,8 +28,8 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <input type='hidden' name='playerratingId' value='{{$dplayer->id}}'>
-        <input type='hidden' name='playerId' value='{{$dplayer->player_id}}'>
+        <input type='hidden' name='playerratingId' value='{{$player->id}}'>
+        <input type='hidden' name='playerId' value='{{$player->player_id}}'>
         {{--<input type='' name='attack' value='{{$team->attack}}'>--}}
         <br>
         Phyical:
@@ -81,7 +81,7 @@
         </select>
         {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
         <br>
-        Comment: <input type='text' name='comment' value='{{$dplayer->comment}}'><br>
+        Comment: <input type='text' name='comment' value='{{$player->comment}}'><br>
         <input type='submit' value='Rate!'>
     </form>
 

@@ -14,26 +14,37 @@ class PlayerController extends Controller
     }
 
     //player detail
+//    public function playerDetail(Request $request){
+//
+//        $id = $request->get('id');
+//        $playerDetail = Players::where('player_id', $id)->first();
+////        $position = Players::where('player_id', $id)->get('position');
+//        $position = $playerDetail -> position;
+//        if ($position == "goalkeeper") {
+//            return view('goalkeeperDetail', compact('playerDetail'));
+//        }
+//        elseif ($position == "defender") {
+//            return view('defenderDetail', compact('playerDetail'));
+//        }
+//        elseif ($position == "midfielder") {
+//            return view('midfielderDetail', compact('playerDetail'));
+//        }
+//        else {
+//            return view('forwardDetail', compact('playerDetail'));
+//        }
+//    }
+
+    //player detail
     public function playerDetail(Request $request){
-
         $id = $request->get('id');
-        $playerDetail = Players::where('player_id', $id)->first();
-//        $position = Players::where('player_id', $id)->get('position');
-        $position = $playerDetail -> position;
-        if ($position == "goalkeeper") {
-            return view('goalkeeperDetail', compact('playerDetail'));
+        if ($id) {
+            $players = Players::where('player_id', $id)->first();
+//            $players = Players::where('team', $team->name)->get();
+            return view('playerDetail', compact('players'));
         }
-        elseif ($position == "defender") {
-            return view('defenderDetail', compact('playerDetail'));
-        }
-        elseif ($position == "midfielder") {
-            return view('midfielderDetail', compact('playerDetail'));
-        }
-        else {
-            return view('forwardDetail', compact('playerDetail'));
-        }
-    }
+        return view('playerDetail');
 
+    }
 
 //
     //save rating

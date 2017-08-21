@@ -30,12 +30,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 // team rating function
 Route::get("/teamList", "TeamController@teamList");
 Route::get("/teamDetail", "TeamController@teamDetail");
-//Route::post('/saveTeamRating', 'TeamController@saveTeamRating');
+Route::post('/saveTeamRating', 'TeamController@saveTeamRating');
 
-Route::post('/saveTeamRating', ['middleware' => 'auth', function()
-{
-    echo "teat information";
-}]);
+//Route::post('/saveTeamRating', ['middleware' => 'auth', function()
+//{
+//    echo "teat information";
+//}]);
 
 //player rating function
 Route::get('/playerList', 'PlayerController@playerList');
