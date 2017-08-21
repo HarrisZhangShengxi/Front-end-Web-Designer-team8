@@ -13,6 +13,20 @@
     Red Card: {{$team->red_card}}<br>
     <hr>
 
+    <tr>
+        <td>Players of the Team</td>
+    </tr>
+    @foreach($players as $item)
+        <table>
+            <col width="200">
+            <tr>
+                <td>
+                    {{$item->name}}
+                </td>
+            </tr>
+        </table>
+    @endforeach
+
     <form action="/saveRating" method="post">
         {{csrf_field()}}
         Attack:

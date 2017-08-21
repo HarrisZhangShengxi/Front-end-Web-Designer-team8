@@ -2,47 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Defenders;
-use App\Forwards;
-use App\Goalkeepers;
-use App\Midfielders;
+use App\Players;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
     //display all players
     public static function playerList() {
-        $glist = Goalkeepers::all();
-        $dlist = Defenders::all();
-        $mlist = Midfielders::all();
-        $flist = Forwards::all();
-        return view('playerList', compact('glist','dlist','mlist','flist'));
+        $playerlist = Players::all();
+        return view('playerList', compact('playerlist'));
     }
 
-    //Team detail
+    //player detail
     public function playerDetail(Request $request){
 
-        $gid = $request->get('g_id');
-        $did = $request->get('d_id');
-        $mid = $request->get('m_id');
-        $fid = $request->get('f_id');
-        if ($gid) {
-            $gplayerDetail = Goalkeepers::where('gplayer_id', $gid)->first();
-            return view('goalkeeperDetail')->with('gplayer', $gplayerDetail);
+        $id = $request->get('id');
+        $playerDetail = Players::where('player_id', $id)->first();
+//        $position = Players::where('player_id', $id)->get('position');
+        $position = $playerDetail -> position;
+        if ($position == "goalkeeper") {
+            return view('goalkeeperDetail', compact('playerDetail'));
         }
-        elseif ($did) {
-            $dplayerDetail = Defenders::where('dplayer_id', $did)->first();
-            return view('defenderDetail')->with('dplayer', $dplayerDetail);
+        elseif ($position == "defender") {
+            return view('defenderDetail', compact('playerDetail'));
         }
-        elseif ($mid) {
-            $mplayerDetail = Midfielders::where('mplayer_id', $mid)->first();
-            return view('midfielderDetail')->with('mplayer', $mplayerDetail);
+        elseif ($position == "midfielder") {
+            return view('midfielderDetail', compact('playerDetail'));
         }
         else {
-            $fplayerDetail = Forwards::where('fplayer_id', $fid)->first();
-            return view('forwardDetail')->with('fplayer', $fplayerDetail);
+            return view('forwardDetail', compact('playerDetail'));
         }
     }
+
+
 //
 //    //save rating
 //    public function saveRating(Request $request) {
