@@ -8,10 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    {{--<title>{{ config('app.name', 'RATING') }}</title>--}}
+    <title>RATING</title>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/icomoon.css') }}" rel="stylesheet" type="text/css" />
+
+
 </head>
 <body>
     <div id="app">
@@ -28,8 +32,11 @@
                     </button>
 
                     <!-- Branding Image -->
+                    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                        {{--{{ config('app.name', 'RATING') }}--}}
+                    {{--</a>--}}
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        RATING
                     </a>
                 </div>
 
@@ -43,9 +50,34 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="">Rate</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    About
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="team.blade.php">Team</a></li>
+                                    <li><a href="contact.blade.php">Contact Us</a></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="btn-cta"><a href="{{ route('login') }}">Login</a></li>
+                            <li class="btn-cta"><a href="{{ route('register') }}">Register</a></li>
+
                         @else
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="">Rate</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    About
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="mac699team8.blade.php">Team</a></li>
+                                    <li><a href="contact.blade.php">Contact Us</a></li>
+                                    <li></li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->email }} <span class="caret"></span>
@@ -73,8 +105,6 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

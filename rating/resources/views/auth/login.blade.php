@@ -1,18 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
-<div class="container">
+    <br>
+<div class="content">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Login
+                    </h3>
+                </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form accept-charset="UTF-8" role="form" class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
+                        <fieldset>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
@@ -59,7 +63,9 @@
                                 </a>
                             </div>
                         </div>
+                        </fieldset>
                     </form>
+                    <p class="m-b-0 m-t">Not signed up? <a href="{{route('register')}}">Sign up here</a>.</p>
                 </div>
             </div>
         </div>

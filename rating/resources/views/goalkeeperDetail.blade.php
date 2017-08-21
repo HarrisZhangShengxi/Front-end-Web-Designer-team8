@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
 
@@ -17,7 +17,7 @@
         Yellow/Red Card: {{$gplayer->yellow_red_card}}<br>
         <hr>
 
-        <form action="/saveRating" method="post">
+        <form action="/saveplayerRating" method="post">
             {{csrf_field()}}
             Skills:
             <select title='player_rating' name="skills">
@@ -27,8 +27,8 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input type='hidden' name='teamratingId' value='{{$team->id}}'>
-            <input type='hidden' name='teamId' value='{{$team->team_id}}'>
+            <input type='hidden' name='playerratingId' value='{{$gplayer->id}}'>
+            <input type='hidden' name='playerId' value='{{$gplayer->player_id}}'>
             {{--<input type='' name='attack' value='{{$team->attack}}'>--}}
             <br>
             Phyical:
@@ -80,7 +80,7 @@
             </select>
             {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
             <br>
-            Comment: <input type='text' name='comment' value='{{$team->comment}}'><br>
+            Comment: <input type='text' name='comment' value='{{$gplayer->comment}}'><br>
             <input type='submit' value='Rate!'>
         </form>
 @endsection
