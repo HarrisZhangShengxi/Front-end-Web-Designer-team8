@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Defenders;
-use App\Forwards;
-use App\Goalkeepers;
-use App\Midfielders;
+use App\Players;
 use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use Psy\Util\Str;
+use Illuminate\Support\Str;
 
 class SearchController extends Controller
 {
@@ -19,49 +16,55 @@ class SearchController extends Controller
     {
         $content = $request->get('content');
         $str = Str::lower($content);
-        if(Input::get('type') == "Player" && $str != '') {
+        if($_POST["option"] == "Player" && $str != '') {
             switch ($str):
                 case 'forward':
-                    $player = Forwards::all();
-                    return view('');
+                    $player = Players::where('position', 'forward')->get();
+                    return redirect('searchPlayerList'.$player);
                 case 'midfielder':
-                    $player = Midfielders::all();
-                    return view('');
+                    $player = Players::where('position', 'midfielder')->get();
+                    return redirect('searchPlayerList'.$player);
                 case 'defender':
-                    $player = Defenders::all();
-                    return view('');
+                    $player = Players::where('position', 'defender')->get();
+                    return redirect('searchPlayerList' . $player);
                 case 'goalkeeper':
-                    $player = Goalkeepers::all();
-                    return view('');
+                    $player = Players::where('position', 'goalkeeper')->get();
+                    return redirect('searchPlayerList' . $player);
                 default:
                     $this->find_player($str);
             endswitch;
         }//find specific player
-        elseif(Input::get('type') == "Team" && $str != '') {
+        elseif($_POST["option"] == "Team" && $str != '') {
             $team = Team::where('name', $str)->first();
             return view('teamDetail', compact('team'));
         }//find specific team
-        elseif(Input::get('type') == "Player" && $str == '') {
+        elseif($_POST["option"] == "Player" && $str == '') {
             PlayerController::playerList();
         }
-        elseif(Input::get('type') == "Team" && $str == '') {
+        elseif($_POST["option"] == "Team" && $str == '') {
             TeamController::teamList();
         }
         else {
-
+            return view('searching');
         }
+        return view('searching');
     }
 
-    public function find_player($player){
-        $re1 = Forwards::where('name', $player)->first();
-        $re2 = Midfielders::where('name', $player)->first();
-        $re3 = Defenders::where('name', $player)->first();
-        $re4 = Goalkeepers::where('name', $player)->first();
+    public function find_player($a){
+        $playerDetail = Players::where('name', $a)->first();
+        $pos = $playerDetail -> position;
 
-        if($re1) { return view('forwardDetail', compact('re1')); }
-        elseif ($re2) { return view('midfielderDetail', compact('re2')); }
-        elseif ($re3) { return view('defenderDetail', compact('re3')); }
-        elseif ($re4) { return view('goalkeeperDetail', compact('re4')); }
-        else { }
+        switch ($pos):
+            case 'forward':
+                return view('forwardDetail', compact('playerDetail'));
+            case 'midfielder':
+                return view('midfielderDetail', compact('playerDetail'));
+            case 'defender':
+                return view('defenderDetail', compact('playerDetail'));
+            case 'goalkeeper':
+                return view('goalkeeperDetail', compact('playerDetail'));
+        endswitch;
+
+        return view('searching');
     }
 }

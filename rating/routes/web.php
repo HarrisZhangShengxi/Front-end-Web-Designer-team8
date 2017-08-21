@@ -43,4 +43,4 @@ Route::get('/playerDetail', 'PlayerController@playerDetail');
 Route::post('/savePlayerRating', 'PlayerController@savePlayerRating');
 
 //Search
-Route::get("/search", "SearchController@find_team");
+Route::get("/searching", "SearchController@searching");

@@ -18,8 +18,8 @@ class CreatePlayerratings extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('player_id');
-            $table->string('position', 20);
+            $table->integer('player_id')->unsigned();
+            $table->foreign('player_id')->references('player_id')->on('players');
             $table->float('skills');
             $table->float('phyical');
             $table->float('attack');

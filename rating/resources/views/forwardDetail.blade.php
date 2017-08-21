@@ -2,19 +2,20 @@
 
 @section('content')
 
-    Name: {{$fplayer->name}}<br>
-    Age: {{$fplayer->age}}<br>
-    Height: {{$fplayer->height}}<br>
-    Country: {{$fplayer->country}}<br>
-    Team: {{$fplayer->team}}<br>
-    Appearance: {{$fplayer->appearance}}<br>
-    Shooting Accuracy: {{$fplayer->shooting_accuracy}}<br>
-    Goals: {{$fplayer->goals}}<br>
-    Passing Accuracy: {{$fplayer->passing_accuracy}}<br>
-    Assists: {{$fplayer->assists}}<br>
-    Foul Conceded: {{$fplayer->foul_conceded}}<br>
-    Tackles: {{$fplayer->tackles}}<br>
-    Yellow/Red Card: {{$fplayer->yellow_red_card}}<br>
+    Name: {{$playerDetail->name}}<br>
+    Age: {{$playerDetail->age}}<br>
+    Height: {{$playerDetail->height}}<br>
+    Country: {{$playerDetail->country}}<br>
+    Team: {{$playerDetail->team}}<br>
+    Position: {{$playerDetail->position}}<br>
+    Appearance: {{$playerDetail->appearance}}<br>
+    Shooting Accuracy: {{$playerDetail->shooting_accuracy}}<br>
+    Goals: {{$playerDetail->goals}}<br>
+    Passing Accuracy: {{$playerDetail->passing_accuracy}}<br>
+    Assists: {{$playerDetail->assists}}<br>
+    Foul Conceded: {{$playerDetail->foul_conceded}}<br>
+    Tackles: {{$playerDetail->tackles}}<br>
+    Yellow/Red Card: {{$playerDetail->yellow_red_card}}<br>
     <hr>
 
     <form action="/saveplayerRating" method="post">
