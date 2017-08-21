@@ -57,7 +57,7 @@
                                     About
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="team.blade.php">Team</a></li>
+                                    <li><a href="mac699team8.blade.php">Team</a></li>
                                     <li><a href="contact.blade.php">Contact Us</a></li>
                                     <li></li>
                                 </ul>

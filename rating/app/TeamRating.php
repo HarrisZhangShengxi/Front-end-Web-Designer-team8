@@ -21,8 +21,9 @@ class TeamRating extends Model
 
     public $timestamps = false;
 
-    public static function saveRating(Request $request) {
+    public static function saveTeamRating(Request $request) {
         $teamratingId = $request->get("teamratingId");
+        $userId = $request->get("userId");
         $teamId = $request->get("teamId");
         $attack = $request->get("attack");
 //        $attackRating = $request->get("attackRating");
@@ -33,6 +34,7 @@ class TeamRating extends Model
 
         $saveResult = \App\TeamRating::create([
 //            "id"=> $teamratingId,
+            "user_id"=> $userId,
             "team_id"=> $teamId,
             "attack" => $attack,
             "defence" => $defence,
