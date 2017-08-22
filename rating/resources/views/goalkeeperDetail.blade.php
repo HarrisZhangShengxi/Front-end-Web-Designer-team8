@@ -2,19 +2,19 @@
 
 @section('content')
 
-        Name: {{$gplayer->name}}<br>
-        Age: {{$gplayer->age}}<br>
-        Height: {{$gplayer->height}}<br>
-        Country: {{$gplayer->country}}<br>
-        Team: {{$gplayer->team}}<br>
-        Appearance: {{$gplayer->appearance}}<br>
-        Clean Sheets: {{$gplayer->clean_sheets}}<br>
-        Goal Conceded: {{$gplayer->goal_conceded}}<br>
-        Penalty Saves: {{$gplayer->penalty_saves}}<br>
-        Distribution Accuracy: {{$gplayer->distribution_accuracy}}<br>
-        Total Saves: {{$gplayer->total_saves}}<br>
-        Total Clearances: {{$gplayer->total_clearances}}<br>
-        Yellow/Red Card: {{$gplayer->yellow_red_card}}<br>
+        Name: {{$playerDetail->name}}<br>
+        Age: {{$playerDetail->age}}<br>
+        Height: {{$playerDetail->height}}<br>
+        Country: {{$playerDetail->country}}<br>
+        Team: {{$playerDetail->team}}<br>
+        Appearance: {{$playerDetail->appearance}}<br>
+        Clean Sheets: {{$playerDetail->clean_sheets}}<br>
+        Goal Conceded: {{$playerDetail->goal_conceded}}<br>
+        Penalty Saves: {{$playerDetail->penalty_saves}}<br>
+        Distribution Accuracy: {{$playerDetail->distribution_accuracy}}<br>
+        Total Saves: {{$playerDetail->total_saves}}<br>
+        Total Clearances: {{$playerDetail->total_clearances}}<br>
+        Yellow/Red Card: {{$playerDetail->yellow_red_card}}<br>
         <hr>
 
         <form action="/saveplayerRating" method="post">
@@ -27,8 +27,8 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input type='hidden' name='playerratingId' value='{{$gplayer->id}}'>
-            <input type='hidden' name='playerId' value='{{$gplayer->player_id}}'>
+            <input type='hidden' name='playerratingId' value='{{$playerDetail->id}}'>
+            <input type='hidden' name='playerId' value='{{$playerDetail->player_id}}'>
             {{--<input type='' name='attack' value='{{$team->attack}}'>--}}
             <br>
             Phyical:
@@ -80,7 +80,7 @@
             </select>
             {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
             <br>
-            Comment: <input type='text' name='comment' value='{{$gplayer->comment}}'><br>
+            Comment: <input type='text' name='comment' value='{{$playerDetail->comment}}'><br>
             <input type='submit' value='Rate!'>
         </form>
 @endsection

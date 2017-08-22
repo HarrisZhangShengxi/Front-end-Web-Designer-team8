@@ -18,7 +18,6 @@ class PlayerController extends Controller
 
         $id = $request->get('id');
         $playerDetail = Players::where('player_id', $id)->first();
-//        $position = Players::where('player_id', $id)->get('position');
         $position = $playerDetail -> position;
         if ($position == "goalkeeper") {
             return view('goalkeeperDetail', compact('playerDetail'));
