@@ -38,3 +38,4 @@ Route::get('/playerDetail', 'PlayerController@playerDetail');
 
 //Search
 Route::get("/searching", "SearchController@searching");
+Route::get("/searchPlayerList", "SearchController@searching");

@@ -4,20 +4,15 @@
 
     <h3>Search</h3>
 
-    <form method="POST" action="/search">
+    <form method="GET" action="/searching">
         {{ csrf_field() }}
-        <div class="form-group">
+            <span>
             {{-- 这里的name的取名通常和数据库表的字段名一样 --}}
-            <input type="text" name="content" class="form-control">
-        </div>
-
-        <div class="form-group">
+                <input type='text' name="text" class="form-control">
+            </span>
             <input type="radio" name="option" value="Player" checked/>Player<input type="radio" name="option" value="Team" />Team
-        </div>
 
-        <div class="form-group">
             <button type="submit" class="btn btn-primary">Search</button>
-        </div>
     </form>
 
     {{--@foreach($player as $item)--}}
