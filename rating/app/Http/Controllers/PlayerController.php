@@ -36,10 +36,10 @@ class PlayerController extends Controller
 
 
 //
-//    //save rating
-//    public function saveRating(Request $request) {
-//        $saveResult = \App\PlayerRating::saveRating($request);
-//        echo $saveResult;
-//    }
+    //save rating
+    public function savePlayerRating(Request $request) {
+        $saveResult = \App\PlayerRating::savePlayerRating($request);
+        echo $saveResult;
+    }
 
 }

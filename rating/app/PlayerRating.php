@@ -20,9 +20,9 @@ class PlayerRating extends Model
 
     public $timestamps = false;
 
-    public static function saveRating(Request $request) {
+    public static function savePlayerRating(Request $request) {
 //        $teamratingId = $request->get("teamratingId");
-        $playerId = $request->get("playerId");
+        $playerId = $request->get("gplayerId" or "dplayerId" or "fplayerId" or "mplayerId");
         $attack = $request->get("attack");
 //        $attackRating = $request->get("attackRating");
         $defence = $request->get("defence");
@@ -30,9 +30,9 @@ class PlayerRating extends Model
         $discipline = $request->get("discipline");
         $comment = $request->get("comment");
 
-        $saveResult = \App\TeamRating::create([
+        $saveResult = \App\PlayerRating::create([
 //            "id"=> $teamratingId,
-            "player_id"=> $teamId,
+            "player_id"=> $playerId,
             "attack" => $attack,
             "defence" => $defence,
             "team_play" => $teamPlay,

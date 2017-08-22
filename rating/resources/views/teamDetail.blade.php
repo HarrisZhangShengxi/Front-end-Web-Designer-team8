@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
 
@@ -7,27 +7,13 @@
     Goals: {{$team->goals}}<br>
     Passing Accuracy: {{$team->passing_accuracy}}<br>
     Assists: {{$team->assists}}<br>
-    Saves: {{$team->save}}<br>
+    Tackle: {{$team->tackle}}<br>
     Tackle Success: {{$team->tackle_success}}<br>
     Yellow Card: {{$team->yellow_card}}<br>
     Red Card: {{$team->red_card}}<br>
     <hr>
 
-    <tr>
-        <td>Players of the Team</td>
-    </tr>
-    @foreach($players as $item)
-        <table>
-            <col width="200">
-            <tr>
-                <td>
-                    {{$item->name}}
-                </td>
-            </tr>
-        </table>
-    @endforeach
-
-    <form action="/saveRating" method="post">
+    <form action="/saveteamRating" method="post">
         {{csrf_field()}}
         Attack:
             <select title='team_rating' name="attack">
