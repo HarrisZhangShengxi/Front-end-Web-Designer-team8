@@ -204,8 +204,8 @@
                                 <!--                    <li class="dropdown-footer">Dropdown footer</li>-->
                             </ul>
                         </li>
-                        <li><a href="#">Rate Players</a></li>
-                        <li><a href="#">Rate Teams</a></li>
+                        <li><a href="{{url('playerList')}}">Rate Players</a></li>
+                        <li><a href="{{url('teamList')}}">Rate Teams</a></li>
                         <li class="dropdown dropdown-mm">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                             <!-- Dropdown Menu -->
@@ -228,11 +228,15 @@
 </div>
 
 
-
 @yield('content')
 
-
-
+{{--all out block--}}
+<div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</div>
 
 <!-- ======== @Region: #footer ======== -->
     <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="url('..css/css/images/bg_footer-map.png')" data-stellar-background-ratio="0.4">

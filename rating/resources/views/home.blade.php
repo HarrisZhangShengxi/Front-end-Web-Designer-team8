@@ -1,18 +1,32 @@
-@extends('layouts.index')
+@extends('layouts.index2')
 
 @section('content')
-    <br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Home</div>
+    <head>
+        <script src="/js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                setTimeout(function(){
+                    location.href = "/teamList";
+                }, 3000);
+            });
+        </script>
+    </head>
+    <body>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Login
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p class="m-b-0 m-t">Login Success!</p>
             </div>
         </div>
     </div>
-</div>
+    </div>
+
+    </body>
+
 @endsection

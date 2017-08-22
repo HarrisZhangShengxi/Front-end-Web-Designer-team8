@@ -13,7 +13,11 @@
     Red Card: {{$team->red_card}}<br>
     <hr>
     Former Rating:<br>
-    Overall:
+    Overall:<br>
+    Attack: {{$info['attackAverage']}}<br>
+    Defence: {{$info['defenceAverage']}}<br>
+    Teamplay: {{$info['teamPlayAverage']}}<br>
+    Discipline: {{$info['disciplineAverage']}}<br>
     <hr>
     <form action="/saveTeamRating" method="post">
         {{csrf_field()}}

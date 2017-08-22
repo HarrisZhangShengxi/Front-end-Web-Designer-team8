@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeamRating extends Model
 {
     //
     protected $fillable = [
-        'team_num', 'attack', 'defence', 'team_play', 'discipline', 'comment'
+        'user_id', 'team_id', 'attack', 'defence', 'team_play', 'discipline', 'comment'
     ];
 
     //
@@ -22,8 +23,15 @@ class TeamRating extends Model
     public $timestamps = false;
 
     public static function saveTeamRating(Request $request) {
+
+        $user = Auth::user();
+
+        if ($user == null) {
+            return;
+        }
+
         $teamratingId = $request->get("teamratingId");
-        $userId = $request->get("userId");
+        $userId = $user->id;
         $teamId = $request->get("teamId");
         $attack = $request->get("attack");
 //        $attackRating = $request->get("attackRating");
