@@ -19,7 +19,8 @@ class SearchController extends Controller
         $str = Str::lower($content);
         $option = $request->get('option');
         $advance = $request->get('advance');
-        if($option == "Player" && $str != '') {
+        echo $advance;
+        if($option == "Player" && $advance == null && $str != '') {
             switch ($str):
                 case 'forward':
                     $playerlist = Players::where('position', 'forward')->get();
@@ -58,7 +59,7 @@ class SearchController extends Controller
                     else {return view('searching');}
             endswitch;
         }
-        elseif($option == "Team" && $str != '') {
+        elseif($option == "Team" && $advance == null && $str != '') {
             $team = Team::where('name', 'like', "%$str%");
             $count = $team->count();
             if($count > 1) {
@@ -75,18 +76,38 @@ class SearchController extends Controller
                 return view('searching');
             }
         }
-        elseif($option == "Player" && $advance == "Rate" && $str != '') {
-            $PR = PlayerRating::where($str)->join('players', 'player_id')->get();
-            return view('playerList')->with('playerlist', $PR);
-//            $TR = TeamRating::where($str)->join('teams', 'team_id')->get('name');
-//            return view('searchRatingList', compact('PR', 'TR'));
+        elseif ($option == "Player" && $advance == 1 && $str != '') {
+            $prd = PlayerRating::join('players', 'playerratings.player_id', '=', 'players.player_id')
+                ->where('name', 'like', "%$str%")
+                ->orderByRaw('skills, phyical, attack, defence, weak_foot, team_play')->get();
+            return view('playerRatingList', compact( 'prd'));
+        }
+        elseif ($option == "Team" && $advance == 1 && $str != '') {
+            $trd = TeamRating::join('teams', 'teamratings.team_id', '=', 'teams.team_id')
+                ->where('name', 'like', "%$str%")
+                ->orderByRaw("attack, defence, team_play, discipline")->get();
+            return view('teamRatingList', compact('trd'));
+        }
+        elseif ($option == "Player" && $advance == 2 && $str != '') {
+            $prd = PlayerRating::join('players', 'playerratings.player_id', '=', 'players.player_id')
+                ->where('name', 'like', "%$str%")
+                ->latest('playerratings.created_at')->get();
+            return view('playerRatingList', compact('prd'));
+        }
+        elseif ($option == "Team" && $advance == 2 && $str != '') {
+            $trd = TeamRating::join('teams', 'teamratings.team_id', '=', 'teams.team_id')
+                ->where('name', 'like', "%$str%")
+                ->latest('teamratings.created_at')->get();
+            return view('teamRatingList', compact('trd'));
         }
         elseif($option == "Player" && $str == '') {
             $playerlist = Players::all();
-            return view('playerList', compact('playerlist'));        }
+            return view('playerList', compact('playerlist'));
+        }
         elseif($option == "Team" && $str == '') {
             $teamlist = Team::all();
-            return view('teamlist')->with('teamlist', $teamlist);        }
+            return view('teamlist')->with('teamlist', $teamlist);
+        }
         else {
             return view('searching');
         }
