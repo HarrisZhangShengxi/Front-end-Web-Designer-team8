@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\PlayerRating;
 use App\Players;
 use App\Team;
+use App\TeamRating;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
 
 class SearchController extends Controller
@@ -14,57 +15,102 @@ class SearchController extends Controller
     //Searching
     public function searching(Request $request)
     {
-        $content = $request->get('content');
+        $content = $request->get('text');
         $str = Str::lower($content);
-        if($_POST["option"] == "Player" && $str != '') {
+        $option = $request->get('option');
+        $advance = $request->get('advance');
+        echo $advance;
+        if($option == "Player" && $advance == null && $str != '') {
             switch ($str):
                 case 'forward':
-                    $player = Players::where('position', 'forward')->get();
-                    return redirect('searchPlayerList'.$player);
+                    $playerlist = Players::where('position', 'forward')->get();
+                    return view('playerList', compact('playerlist'));
                 case 'midfielder':
-                    $player = Players::where('position', 'midfielder')->get();
-                    return redirect('searchPlayerList'.$player);
+                    $playerlist = Players::where('position', 'midfielder')->get();
+                    return view('playerList', compact('playerlist'));
                 case 'defender':
-                    $player = Players::where('position', 'defender')->get();
-                    return redirect('searchPlayerList' . $player);
+                    $playerlist = Players::where('position', 'defender')->get();
+                    return view('playerList', compact('playerlist'));
                 case 'goalkeeper':
-                    $player = Players::where('position', 'goalkeeper')->get();
-                    return redirect('searchPlayerList' . $player);
+                    $playerlist = Players::where('position', 'goalkeeper')->get();
+                    return view('playerList', compact('playerlist'));
                 default:
-                    $this->find_player($str);
+                    $playerDetail = Players::where('name', 'like', "%$str%");
+                    $count = $playerDetail->count();
+                    if($count > 1) {
+                        $playerDetail = $playerDetail->get();
+                        return view('playerList')->with('playerlist', $playerDetail);
+                    }
+                    elseif($count == 1) {
+                        $playerDetail = $playerDetail->first();
+                        $pos = $playerDetail->position;
+
+                        switch ($pos):
+                            case 'forward':
+                                return view('forwardDetail', compact('playerDetail'));
+                            case 'midfielder':
+                                return view('midfielderDetail', compact('playerDetail'));
+                            case 'defender':
+                                return view('defenderDetail', compact('playerDetail'));
+                            case 'goalkeeper':
+                                return view('goalkeeperDetail', compact('playerDetail'));
+                        endswitch;
+                    }
+                    else {return view('searching');}
             endswitch;
-        }//find specific player
-        elseif($_POST["option"] == "Team" && $str != '') {
-            $team = Team::where('name', $str)->first();
-            return view('teamDetail', compact('team'));
-        }//find specific team
-        elseif($_POST["option"] == "Player" && $str == '') {
-            PlayerController::playerList();
         }
-        elseif($_POST["option"] == "Team" && $str == '') {
-            TeamController::teamList();
+        elseif($option == "Team" && $advance == null && $str != '') {
+            $team = Team::where('name', 'like', "%$str%");
+            $count = $team->count();
+            if($count > 1) {
+                $teamlist = $team->get();
+                return view('teamlist', compact('teamlist'));
+            }
+            elseif ($count == 1) {
+                $team = $team->first();
+                $name = $team->name;
+                $players = Players::where('team', $name)->get();
+                return view('teamDetail', compact('team', 'players'));
+            }
+            else{
+                return view('searching');
+            }
+        }
+        elseif ($option == "Player" && $advance == 1 && $str != '') {
+            $prd = PlayerRating::join('players', 'playerratings.player_id', '=', 'players.player_id')
+                ->where('name', 'like', "%$str%")
+                ->orderByRaw('skills, phyical, attack, defence, weak_foot, team_play')->get();
+            return view('playerRatingList', compact( 'prd'));
+        }
+        elseif ($option == "Team" && $advance == 1 && $str != '') {
+            $trd = TeamRating::join('teams', 'teamratings.team_id', '=', 'teams.team_id')
+                ->where('name', 'like', "%$str%")
+                ->orderByRaw("attack, defence, team_play, discipline")->get();
+            return view('teamRatingList', compact('trd'));
+        }
+        elseif ($option == "Player" && $advance == 2 && $str != '') {
+            $prd = PlayerRating::join('players', 'playerratings.player_id', '=', 'players.player_id')
+                ->where('name', 'like', "%$str%")
+                ->latest('playerratings.created_at')->get();
+            return view('playerRatingList', compact('prd'));
+        }
+        elseif ($option == "Team" && $advance == 2 && $str != '') {
+            $trd = TeamRating::join('teams', 'teamratings.team_id', '=', 'teams.team_id')
+                ->where('name', 'like', "%$str%")
+                ->latest('teamratings.created_at')->get();
+            return view('teamRatingList', compact('trd'));
+        }
+        elseif($option == "Player" && $str == '') {
+            $playerlist = Players::all();
+            return view('playerList', compact('playerlist'));
+        }
+        elseif($option == "Team" && $str == '') {
+            $teamlist = Team::all();
+            return view('teamlist')->with('teamlist', $teamlist);
         }
         else {
             return view('searching');
         }
-        return view('searching');
-    }
-
-    public function find_player($a){
-        $playerDetail = Players::where('name', $a)->first();
-        $pos = $playerDetail -> position;
-
-        switch ($pos):
-            case 'forward':
-                return view('forwardDetail', compact('playerDetail'));
-            case 'midfielder':
-                return view('midfielderDetail', compact('playerDetail'));
-            case 'defender':
-                return view('defenderDetail', compact('playerDetail'));
-            case 'goalkeeper':
-                return view('goalkeeperDetail', compact('playerDetail'));
-        endswitch;
-
         return view('searching');
     }
 }

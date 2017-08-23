@@ -28,8 +28,8 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <input type='hidden' name='playerratingId' value='{{$mplayer->id}}'>
-        <input type='hidden' name='playerId' value='{{$mplayer->player_id}}'>
+        <input type='hidden' name='playerratingId' value='{{$playerDetail->id}}'>
+        <input type='hidden' name='playerId' value='{{$playerDetail->player_id}}'>
         {{--<input type='' name='attack' value='{{$team->attack}}'>--}}
         <br>
         Phyical:
@@ -81,7 +81,7 @@
         </select>
         {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
         <br>
-        Comment: <input type='text' name='comment' value='{{$mplayer->comment}}'><br>
+        Comment: <input type='text' name='comment' value='{{$playerDetail->comment}}'><br>
         <input type='submit' value='Rate!'>
     </form>
 
