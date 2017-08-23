@@ -38,12 +38,12 @@ class PlayerController extends Controller
     public function playerDetail(Request $request){
         $id = $request->get('id');
         if ($id) {
-            $players = Players::where('player_id', $id)->first();
+            $player = Players::where('player_id', $id)->first();
 //            $players = Players::where('team', $team->name)->get();
-            return view('playerDetail', compact('players'));
+//            return view('playerDetail')->with('player',$player);
+            return view('playerDetail', compact( 'player'));
         }
         return view('playerDetail');
-
     }
 
 //

@@ -87,7 +87,7 @@ a.btn-hh-trigger {
 }
 .header .navbar-brand {
   /* replace logo colour */
-  background: url("../img/logo-green.png") left top no-repeat;
+  background: url("../../img/logo-green.png") left top no-repeat;
 }
 .social-media a {
   color: #00bb5c;

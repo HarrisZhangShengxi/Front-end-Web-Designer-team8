@@ -121,7 +121,7 @@
                         <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
                         <a class="navbar-brand" href="index.html" title="Home">
                             <h1 class="hidden">
-                                <img src="/rating/public/css/img/logo.png" alt="Rating Logo">
+                                <img src="/rating/public/img/logo.png" alt="Rating Logo">
                                 RATING
                             </h1>
                         </a>
