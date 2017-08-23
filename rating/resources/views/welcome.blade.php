@@ -202,12 +202,12 @@
                             <a href="url{{'rating'}}"><i class="fa fa-home"></i></a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rating<b class="caret"></b></a>
+                            <a href="{{url('searching')}}" class="dropdown-toggle" data-toggle="dropdown">Rating<b class="caret"></b></a>
                             <!-- Dropdown Menu -->
                             <ul class="dropdown-menu">
                                 <li class="dropdown-header">Select Category</li>
-                                <li><a href="#" tabindex="-1" class="menu-item">Player Rating</a></li>
-                                <li><a href="#" tabindex="-1" class="menu-item">Team Rating</a></li>
+                                <li><a href="{{url('searching')}}" tabindex="-1" class="menu-item">Player Rating</a></li>
+                                <li><a href="{{url('searching')}}" tabindex="-1" class="menu-item">Team Rating</a></li>
 
                                 <!--                    <li class="dropdown-footer">Dropdown footer</li>-->
                             </ul>
@@ -251,10 +251,44 @@
                                     To know and rate your favorite soccer player!
                                 </h4>
                                 <p>The best website of rating soccer players. You will get ideas how do others think about your favorite player.</p>
-                                <a href="url{{'playerList'}}" class="btn btn-more btn-lg i-right">Learn Now <i class="fa fa-plus"></i></a>
+                                {{--<a href="url{{'playerList'}}" class="btn btn-more btn-lg i-right">Learn Now <i class="fa fa-plus"></i></a>--}}
                             </div>
                             <div class="col-md-6 col-md-pull-6 hidden-xs">
-                                <img src="img/slides/slide1.png" alt="Slide 1" class="center-block img-responsive">
+                                {{--<img src="img/slides/slide1.png" alt="Slide 1" class="center-block img-responsive">--}}
+                                <h2 class="h1 text-weight-light">
+                                    <span class="text-primary">
+                                        <br>
+                                    </span>
+                                </h2>
+                                <form method="GET" action="/searching">
+                                    {{ csrf_field() }}
+                                    <div>
+                                        <h2 class="h1 text-weight-light" align="right">
+                                            <span class="text-primary">
+                                            Name:
+                                            </span>
+                                        </h2>
+                                        <span>
+                                            {{-- 这里的name的取名通常和数据库表的字段名一样 --}}
+                                            <input type='text' name="text" class="form-control">
+                                        </span>
+                                        <h4 align="right">
+                                        <input type="radio" name="option" value="Player" checked/> Player
+                                        <input type="radio" name="option" value="Team" /> Team
+                                        </h4>
+                                    </div>
+                                    {{--<div id="ad">--}}
+                                        {{--<h4>--}}
+                                        {{--<input type="radio" name="advance" value=1 /> Best Rate--}}
+                                        {{--<input type="radio" name="advance" value=2 /> Latest Date--}}
+                                        {{--</h4>--}}
+                                    {{--</div>--}}
+                                    <div align="right">
+                                        {{--<a href="{{url('teamList')}}" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>--}}
+                                        <button type="submit" class="btn btn-more btn-lg"> <i class="fa fa-search"></i>
+                                            Search</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -263,16 +297,43 @@
                         <div class="row">
                             <div class="col-md-6 text-right-md item-caption">
                                 <h2 class="h1 text-weight-light">
+                                    <br><br>
                                     <span class="text-primary">Rating</span> soccer player and team
                                 </h2>
                                 <h4>
                                     To know and rate your favorite soccer team!
                                 </h4>
                                 <p>The best website of rating soccer players. You will get ideas how do others think about your favorite player.</p>
-                                <a href="url{{'teamList'}}" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
+
                             </div>
                             <div class="col-md-6 hidden-xs">
-                                <img src="img/slides/slide2.png" alt="Slide 2" class="center-block img-responsive">
+                                <h2 class="h1 text-weight-light">
+                                    <span class="text-primary">Search</span>
+                                </h2>
+                                <form method="GET" action="/searching">
+                                    {{ csrf_field() }}
+                                    <div>
+                                        <span>
+                                            {{-- 这里的name的取名通常和数据库表的字段名一样 --}}
+                                            <input type='text' name="text" class="form-control">
+                                        </span>
+                                        {{--<h4 align="right">--}}
+                                            {{--<input type="radio" name="option" value="Player" checked/> Player--}}
+                                            {{--<input type="radio" name="option" value="Team" /> Team--}}
+                                        {{--</h4>--}}
+                                    </div>
+                                    <div id="ad">
+                                    <h4>
+                                    <input type="radio" name="advance" value=1 /> Best Rate
+                                    <input type="radio" name="advance" value=2 /> Latest Date
+                                    </h4>
+                                    </div>
+                                    <div>
+                                        {{--<a href="{{url('teamList')}}" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>--}}
+                                        <button type="submit" class="btn btn-more btn-lg"> <i class="fa fa-search"></i>
+                                            Search</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -290,7 +351,6 @@
         <div class="container">
             <h2 class="text-shadow-white">
                 The best website of rating soccer players and teams.
-                {{--<a href="about.html" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>--}}
             </h2>
         </div>
     </div>
@@ -429,8 +489,11 @@
         <div class="row">
             <div class="col-md-4 text-center">
               <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+                <img src="img/Arsenallogo.jpg" alt="Arsenal logo" width="100px" height="100px">
+              {{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}}
+
+              {{--<i class="fa fa-group fa-stack-1x fa-inverse"></i> --}}
+              </span>
                 <h4 class="text-weight-strong">
                     Arsenal
                 </h4>
@@ -450,8 +513,10 @@
             </div>
             <div class="col-md-4 text-center">
               <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+                <img src="img/ManchesterCityLogo.png" alt="Manchester City Logo" width="130px" height="130px">
+              {{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}}
+              {{--<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>--}}
+              </span>
                 <h4 class="text-weight-strong">
                     Manchester City
                 </h4>
@@ -471,8 +536,10 @@
             </div>
             <div class="col-md-4 text-center">
               <span class="fa-stack fa-5x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+                  <img src="img/TottenhamHotspurLogo.png" alt="Tottenham Hotspur Logo" width="100px" height="90px">
+              {{--<i class="fa fa-circle fa-stack-2x text-primary"></i>--}}
+              {{--<i class="fa fa-cogs fa-stack-1x fa-inverse"></i> --}}
+              </span>
                 <h4 class="text-weight-strong">
                     Tottenham Hotspur
                 </h4>

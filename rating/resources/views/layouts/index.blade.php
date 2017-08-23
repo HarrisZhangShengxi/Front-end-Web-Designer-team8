@@ -191,15 +191,15 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav" id="main-menu">
                         <li class="icon-link">
-                            <a href="index.html"><i class="fa fa-home"></i></a>
+                            <a href="{{url('welcome')}}"><i class="fa fa-home"></i></a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rating<b class="caret"></b></a>
                             <!-- Dropdown Menu -->
                             <ul class="dropdown-menu">
                                 <li class="dropdown-header">Select Category</li>
-                                <li><a href="#" tabindex="-1" class="menu-item">Player Rating</a></li>
-                                <li><a href="#" tabindex="-1" class="menu-item">Team Rating</a></li>
+                                <li><a href="{{url('searching')}}" tabindex="-1" class="menu-item">Player Rating</a></li>
+                                <li><a href="{{url('searching')}}" tabindex="-1" class="menu-item">Team Rating</a></li>
 
                                 <!--                    <li class="dropdown-footer">Dropdown footer</li>-->
                             </ul>

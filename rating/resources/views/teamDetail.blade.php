@@ -19,6 +19,7 @@
     Teamplay: {{$info['teamPlayAverage']}}<br>
     Discipline: {{$info['disciplineAverage']}}<br>
     <hr>
+
     <form action="/saveTeamRating" method="post">
         {{csrf_field()}}
         Attack:
