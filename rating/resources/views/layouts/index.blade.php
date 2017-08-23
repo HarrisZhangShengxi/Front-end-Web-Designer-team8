@@ -119,7 +119,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
-                        <a class="navbar-brand" href="index.html" title="Home">
+                        <a class="navbar-brand" href="{{url('welcome')}}" title="Home">
                             <h1 class="hidden">
                                 <img src="/rating/public/img/logo.png" alt="Rating Logo">
                                 RATING

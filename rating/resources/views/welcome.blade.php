@@ -127,7 +127,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
-                        <a class="navbar-brand" href="url{{'rating'}}" title="Home">
+                        <a class="navbar-brand" href="{{url('welcome')}}" title="Home">
                             <h1 class="hidden">
                                 <img src="/rating/public/img/logo.png" alt="Rating Logo">
                                 RATING
@@ -295,13 +295,13 @@
         </div>
     </div>
 
-    <!--Showcase-->
+    <!-- Players Showcase-->
     <div class="showcase block block-border-bottom-grey">
         <div class="container">
             <h2 class="block-title">
                 Players
             </h2>
-            <p>Part of rated players.</p>
+            <p>Part of Rated Players.</p>
             <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
@@ -319,154 +319,98 @@
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/KevinDeBruyne.jpg" alt="Project 2 image" class="img-responsive underlay">
+                        <img src="img/showcase/KevinDeBruyne.jpg" alt="Kevin De Bruyne" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 2</span> </span>
+                  <span class="overlay-content"> <span class="h4">Kevin De Bruyne</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 2</a>
+                            <a href="#">Kevin De Bruyne</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project3.png" alt="Project 3 image" class="img-responsive underlay">
+                        <img src="img/showcase/MesutÖzil.jpeg" alt="Mesut Özil" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 3</span> </span>
+                  <span class="overlay-content"> <span class="h4">Mesut Özil</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 3</a>
+                            <a href="#">Mesut Özil</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project4.png" alt="Project 4 image" class="img-responsive underlay">
+                        <img src="img/showcase/AaronRamsey.jpg" alt="Aaron Ramsey" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 4</span> </span>
+                  <span class="overlay-content"> <span class="h4">Aaron Ramsey</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 4</a>
+                            <a href="#">Aaron Ramsey</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project5.png" alt="Project 5 image" class="img-responsive underlay">
+                        <img src="img/showcase/OlivierGiroud.jpg" alt="Olivier Giroud" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 5</span> </span>
+                  <span class="overlay-content"> <span class="h4">Olivier Giroud</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 5</a>
+                            <a href="#">Olivier Giroud</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project6.png" alt="Project 6 image" class="img-responsive underlay">
+                        <img src="img/showcase/SergioAgüero.jpg" alt="Sergio Agüero" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 6</span> </span>
+                  <span class="overlay-content"> <span class="h4">Sergio Agüero</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 6</a>
+                            <a href="#">Sergio Agüero</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project7.png" alt="Project 7 image" class="img-responsive underlay">
+                        <img src="img/showcase/DaviddeGea.jpg" alt="David de Gea" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 7</span> </span>
+                  <span class="overlay-content"> <span class="h4">David de Gea</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 7</a>
+                            <a href="#">David de Gea</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
                 </div>
                 <div class="item">
                     <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project8.png" alt="Project 8 image" class="img-responsive underlay">
+                        <img src="img/showcase/HarryKane.jpeg" alt="Harry Kane" class="img-responsive underlay">
                         <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 8</span> </span>
+                  <span class="overlay-content"> <span class="h4">Harry Kane</span> </span>
                 </span>
                     </a>
                     <div class="item-details bg-noise">
                         <h4 class="item-title">
-                            <a href="#">Project 8</a>
-                        </h4>
-                        <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project9.png" alt="Project 9 image" class="img-responsive underlay">
-                        <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 9</span> </span>
-                </span>
-                    </a>
-                    <div class="item-details bg-noise">
-                        <h4 class="item-title">
-                            <a href="#">Project 9</a>
-                        </h4>
-                        <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project10.png" alt="Project 10 image" class="img-responsive underlay">
-                        <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 10</span> </span>
-                </span>
-                    </a>
-                    <div class="item-details bg-noise">
-                        <h4 class="item-title">
-                            <a href="#">Project 10</a>
-                        </h4>
-                        <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project11.png" alt="Project 11 image" class="img-responsive underlay">
-                        <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 11</span> </span>
-                </span>
-                    </a>
-                    <div class="item-details bg-noise">
-                        <h4 class="item-title">
-                            <a href="#">Project 11</a>
-                        </h4>
-                        <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay-wrapper">
-                        <img src="img/showcase/project12.png" alt="Project 12 image" class="img-responsive underlay">
-                        <span class="overlay">
-                  <span class="overlay-content"> <span class="h4">Project 12</span> </span>
-                </span>
-                    </a>
-                    <div class="item-details bg-noise">
-                        <h4 class="item-title">
-                            <a href="#">Project 12</a>
+                            <a href="#">Harry Kane</a>
                         </h4>
                         <a href="#" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
                     </div>
@@ -476,17 +420,118 @@
     </div>
 </div>
 
+<!--Teams Showcase-->
+<div class="services block block-bg-gradient block-border-bottom">
+    <div class="container">
+        <h2 class="block-title">
+            Part of Rated Teams
+        </h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+              <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="text-weight-strong">
+                    Arsenal
+                </h4>
+                <p>
+                    Shooting Accuracy: 36%<br>
+                    Goals: 1698<br>
+                    Passing Accuracy: 84%<br>
+                    Assists: 222156<br>
+                    Save: 463<br>
+                    Tackle Success: 74%<br>
+                    Yellow Card: 1417<br>
+                    Red Card: 84<br>
+                </p>
+                <p>
+                    <a href="{{url('teamDetail?id=2')}}" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+              <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="text-weight-strong">
+                    Manchester City
+                </h4>
+                <p>
+                    Shooting Accuracy: 34%<br>
+                    Goals: 1173<br>
+                    Passing Accuracy: 82%<br>
+                    Assists: 204956<br>
+                    Save: 337<br>
+                    Tackle Success: 75%<br>
+                    Yellow Card: 1158<br>
+                    Red Card: 63<br>
+                </p>
+                <p>
+                    <a href="{{url('teamDetail?id=4')}}" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+              <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+                <h4 class="text-weight-strong">
+                    Tottenham Hotspur
+                </h4>
+                <p>
+                    Shooting Accuracy: 34%<br>
+                    Goals: 1406<br>
+                    Passing Accuracy: 80%<br>
+                    Assists: 190626<br>
+                    Save: 414<br>
+                    Tackle Success: 76%<br>
+                    Yellow Card: 1397<br>
+                    Red Card: 59<br>
+                </p>
+                <p>
+                    <a href="{{url('teamDetail?id=6')}}" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block-contained">
+</div>
+
+<div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="img/overlapimage.jpg" data-stellar-background-ratio="0.3">
+    <h2 class="h-xlg h1 m-a-0">
+        <span data-counter-up>89,000,0</span>s
+    </h2>
+    <h3 class="h-lg m-t-0 m-b-lg">
+        Of Happy Raters!
+    </h3>
+    <p>
+        <a href="{{ route('login') }}" class="btn btn-more btn-lg i-right">Join them today! <i class="fa fa-angle-right"></i></a>
+    </p>
+</div>
+
 
 {{--all out block--}}
 <div class="block block-pd-sm block-bg-primary">
     <div class="container">
-        <div class="row">
+        {{--<div class="row">--}}
+            {{--<h3 class="col-md-4">--}}
+                {{--University of Windsor--}}
+            {{--</h3>--}}
+        {{--</div>--}}
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-6 col-md-2">
+                    <a href="www.uwindsor.ca" title="UWindsor">
+                        <img src="img/clients/UW_Logo (1).png" alt="UWindsor logo" class="img-responsive">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- ======== @Region: #footer ======== -->
-<footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="/images/bg_footer-map.png" data-stellar-background-ratio="0.4">
+<footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png" data-stellar-background-ratio="0.4">
     <div class="container">
 
         <div class="row" id="contact">
