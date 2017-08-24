@@ -1,6 +1,25 @@
 @extends('layouts.index')
 
 @section('content')
+<head>
+    <style>
+    .box {
+    width:200px;
+    height:40px;
+    }
+    .box li {
+    height:40px;
+    width:40px;
+    background:url(http://www.jq22.com/tp/537e9b2e-b92f-4dd2-ae1a-0c708827ea99.png);
+    background-repeat:no-repeat;
+    background-size:25px 25px;
+    list-style:none;
+    background-position:center;
+    float:left;
+    cursor:pointer;
+    }
+    </style>
+</head>
 
     Team: {{$team->name}}<br>
     Shooting Accuracy: {{$team->shooting_accuracy}}<br>
@@ -37,57 +56,76 @@
     <form action="/saveTeamRating" method="post">
         {{csrf_field()}}
         Attack:
+        <div class="box" id="attackStar" data-type="attack">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+        <input type="text" name="attack">
+        <div id="attackScore"></div>
+<br>
 
-
-            <select title='team_rating' name="attack">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
         <input type='hidden' name='teamratingId' value='{{$team->id}}'>
         <input type='hidden' name='teamId' value='{{$team->team_id}}'>
-        {{--<input type='' name='attack' value='{{$team->attack}}'>--}}
         <br>
         Defence:
-            <select title='team_rating' name="defence">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        {{--<input type='' name='defence' value='{{$team->defence}}'>--}}
+            <div class="box" id="defenceStar" data-type="defence">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+        <input type="text" name="defence">
+        <div id="defenceScore"></div>
+
         <br>
         Teamplay:
-            <select title='team_rating' name="teamplay">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+            <div class="box" id="teamplayStar" data-type="teamplay">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+        <input type="text" name="teamplay">
+        <div id="teamplayScore"></div>
         {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
         <br>
         Discipline:
-            <select title='team_rating' name="discipline">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        {{--<input type='' name='discipline' value='{{$team->discipline}}'>--}}
+            <div class="box" id="disciplineStar" data-type="discipline">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </div>
+        <input type="text" name="discipline">
+        <div id="disciplineScore"></div>
         <br>
         Comment: <input type='text' name='comment' value='{{$team->comment}}'><br>
         <input type='submit' value='Rate!'>
     </form>
 
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="path/to/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
-    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-    <script src="path/to/js/star-rating.min.js" type="text/javascript"></script>
 
-    <script scr="{{  asset('js/starRating.js') }}"></script>
+
+@endsection
+@section('script')
+    <script>
+
+        $(".box li").click(function() {
+            var index = $(this).index();
+            var type = $(this).parent().attr("data-type");
+            var parentId = $(this).parent().attr("id");
+            $("#" + parentId).find("li").css("background-image", "url('http://www.jq22.com/tp/537e9b2e-b92f-4dd2-ae1a-0c708827ea99.png')");
+            for (var i = 0; i <= index; i++) {
+                $("#" + parentId).find("li").eq(i).css("background-image", "url('http://www.jq22.com/tp/da9927e6-d099-45d8-a47c-00c882bcbdfa.png')");
+            }
+
+            $("input[name='" + type +"']").val(parseInt(index) + 1);
+            $("#" + type + "Score").text("Choosen Score:" + (parseInt(index) + 1));
+        });
+    </script>
 @endsection

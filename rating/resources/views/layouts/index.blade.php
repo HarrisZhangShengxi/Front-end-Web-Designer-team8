@@ -332,17 +332,17 @@
     <script src="{{ asset('css/lib/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('css/contactform/contactform.js') }}"></script>
 
+<!-- Template Specisifc Custom Javascript File -->
+<script src="{{ asset('css/js/custom.js') }}"></script>
 
-    <!-- Template Specisifc Custom Javascript File -->
-    <script src="{{ asset('css/js/custom.js') }}"></script>
 
+<!--Custom scripts demo background & colour switcher - OPTIONAL -->
+{{--<script src="/rating/public/css/js/color-switcher.js"></script>--}}
 
-    <!--Custom scripts demo background & colour switcher - OPTIONAL -->
-    {{--<script src="/rating/public/css/js/color-switcher.js"></script>--}}
+<!--Contactform script -->
+<script src="{{ asset('css/contactform/contactform.js') }}"></script>
 
-    <!--Contactform script -->
-    <script src="{{ asset('css/contactform/contactform.js') }}"></script>
-
+@yield('script')
 
 </body>
 </html>
