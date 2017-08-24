@@ -580,11 +580,6 @@
 {{--all out block--}}
 <div class="block block-pd-sm block-bg-primary">
     <div class="container">
-        {{--<div class="row">--}}
-            {{--<h3 class="col-md-4">--}}
-                {{--University of Windsor--}}
-            {{--</h3>--}}
-        {{--</div>--}}
         <div class="col-md-8">
             <div class="row">
                 <div class="col-xs-6 col-md-2">

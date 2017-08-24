@@ -233,7 +233,14 @@
 {{--all out block--}}
 <div class="block block-pd-sm block-bg-primary">
     <div class="container">
-        <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-6 col-md-2">
+                    <a href="www.uwindsor.ca" title="UWindsor">
+                        <img src="img/clients/UW_Logo (1).png" alt="UWindsor logo" class="img-responsive">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
