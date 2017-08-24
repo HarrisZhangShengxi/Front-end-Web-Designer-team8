@@ -148,7 +148,7 @@
                                 <li class="hidden-xs">
                                     <i class="fa fa-edit text-primary"></i>
                                 {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
-                                    <a href="#" class="text-uppercase" >
+                                    <a href="{{url('userCenter')}}" class="text-uppercase" >
                                         {{ Auth::user()->email }}
                                         {{--<span class="caret"></span>--}}
                                         {{--<b class="caret"></b>--}}
@@ -239,7 +239,7 @@
 </div>
 
 <!-- ======== @Region: #footer ======== -->
-    <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="url('..css/css/images/bg_footer-map.png')" data-stellar-background-ratio="0.4">
+    <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="img/bg_footer-map.png" data-stellar-background-ratio="0.4">
         <div class="container">
 
             <div class="row" id="contact">

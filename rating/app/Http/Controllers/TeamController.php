@@ -63,7 +63,7 @@ class TeamController extends Controller
                 $info['disciplineAverage'] = $info['disciplineTotal'] / $count;
             }
 
-            return view('teamDetail')->with('team', $team)->with('info', $info);
+            return view('teamDetail')->with('team', $team)->with('info', $info)->with('players', $players);
         }
         return view('teamDetail');
     }

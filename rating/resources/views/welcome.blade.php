@@ -156,7 +156,7 @@
                                 <li class="hidden-xs">
                                     <i class="fa fa-edit text-primary"></i>
                                     {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
-                                    <a href="#" class="text-uppercase" >
+                                    <a href="{{url('userCenter')}}" class="text-uppercase" >
                                         {{ Auth::user()->email }}
                                         {{--<span class="caret"></span>--}}
                                         {{--<b class="caret"></b>--}}

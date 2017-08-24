@@ -20,9 +20,25 @@
     Discipline: {{$info['disciplineAverage']}}<br>
     <hr>
 
+    @foreach($players as $item)
+        <table>
+            <col width="200">
+            <tr>
+                <td>
+                    <a href="/playerDetail?id={{$item->player_id}}">
+                        {{$item->name}}
+                    </a>
+                </td>
+            </tr>
+        </table>
+    <hr>
+    @endforeach
+
     <form action="/saveTeamRating" method="post">
         {{csrf_field()}}
         Attack:
+
+
             <select title='team_rating' name="attack">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -67,4 +83,11 @@
         Comment: <input type='text' name='comment' value='{{$team->comment}}'><br>
         <input type='submit' value='Rate!'>
     </form>
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="path/to/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="path/to/js/star-rating.min.js" type="text/javascript"></script>
+
+    <script scr="{{  asset('js/starRating.js') }}"></script>
 @endsection

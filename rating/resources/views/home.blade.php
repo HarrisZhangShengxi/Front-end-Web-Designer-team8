@@ -6,7 +6,7 @@
         <script>
             $(document).ready(function() {
                 setTimeout(function(){
-                    location.href = "/teamList";
+                    location.href = "/welcome";
                 }, 3000);
             });
         </script>
