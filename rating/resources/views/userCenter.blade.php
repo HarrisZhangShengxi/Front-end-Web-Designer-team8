@@ -240,19 +240,7 @@
                         </li>
                         <li><a href="{{url('playerList')}}">Rate Players</a></li>
                         <li><a href="{{url('teamList')}}">Rate Teams</a></li>
-                        <li class="dropdown dropdown-mm">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
-                            <!-- Dropdown Menu -->
-                            <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
-                                <li class="row">
-                                    <ul class="col-md-6">
-                                        <li><a href="#">Team</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </li>
+                        <li><a href="{{url('mac699team8')}}">About Us</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse -->

@@ -214,19 +214,7 @@
                         </li>
                         <li><a href="{{url('playerList')}}">Rate Players</a></li>
                         <li><a href="{{url('teamList')}}">Rate Teams</a></li>
-                        <li class="dropdown dropdown-mm">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
-                            <!-- Dropdown Menu -->
-                            <ul class="dropdown-menu dropdown-menu-mm dropdown-menu-persist">
-                                <li class="row">
-                                    <ul class="col-md-6">
-                                        <li><a href="#">Team</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </li>
+                        <li><a href="{{url('mac699team8')}}">About Us</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse -->
@@ -270,21 +258,14 @@
                                         </h2>
                                         <span>
                                             {{-- 这里的name的取名通常和数据库表的字段名一样 --}}
-                                            <input type='text' name="text" class="form-control">
+                                            <input type='text' name="text" placeholder="First/Last Name" class="form-control">
                                         </span>
                                         <h4 align="right">
                                         <input type="radio" name="option" value="Player" checked/> Player
                                         <input type="radio" name="option" value="Team" /> Team
                                         </h4>
                                     </div>
-                                    {{--<div id="ad">--}}
-                                        {{--<h4>--}}
-                                        {{--<input type="radio" name="advance" value=1 /> Best Rate--}}
-                                        {{--<input type="radio" name="advance" value=2 /> Latest Date--}}
-                                        {{--</h4>--}}
-                                    {{--</div>--}}
                                     <div align="right">
-                                        {{--<a href="{{url('teamList')}}" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>--}}
                                         <button type="submit" class="btn btn-more btn-lg"> <i class="fa fa-search"></i>
                                             Search</button>
                                     </div>
