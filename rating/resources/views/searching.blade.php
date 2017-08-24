@@ -2,6 +2,9 @@
 
 @section('content')
 
+
+
+
     <h3>Search</h3>
 
     <form method="GET" action="/searching">

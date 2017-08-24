@@ -225,7 +225,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav" id="main-menu">
                         <li class="icon-link">
-                            <a href="url{{'rating'}}"><i class="fa fa-home"></i></a>
+                            <a href="{{url('welcome')}}"><i class="fa fa-home"></i></a>
                         </li>
                         <li class="dropdown">
                             <a href="{{url('searching')}}" class="dropdown-toggle" data-toggle="dropdown">Rating<b class="caret"></b></a>
@@ -313,7 +313,7 @@
                     <p>{{$item->comment}}</p>
                     <p>Date:{{$item->updated_at}}</p>
                     <hr>
-                    @endforeach
+                @endforeach
             </h4>
         </div>
     </div>

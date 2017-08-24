@@ -1,23 +1,50 @@
 @extends('layouts.index')
 
 @section('content')
+    <head>
+        <style>
+            .box {
+                width:200px;
+                height:40px;
+            }
+            .box li {
+                height:40px;
+                width:40px;
+                background:url(http://www.jq22.com/tp/537e9b2e-b92f-4dd2-ae1a-0c708827ea99.png);
+                background-repeat:no-repeat;
+                background-size:25px 25px;
+                list-style:none;
+                background-position:center;
+                float:left;
+                cursor:pointer;
+            }
+        </style>
+    </head>
 
-        Name: {{$playerDetail->name}}<br>
-        Age: {{$playerDetail->age}}<br>
-        Height: {{$playerDetail->height}}<br>
-        Country: {{$playerDetail->country}}<br>
-        Team: {{$playerDetail->team}}<br>
-        Appearance: {{$playerDetail->appearance}}<br>
-        Clean Sheets: {{$playerDetail->clean_sheets}}<br>
-        Goal Conceded: {{$playerDetail->goal_conceded}}<br>
-        Penalty Saves: {{$playerDetail->penalty_saves}}<br>
-        Distribution Accuracy: {{$playerDetail->distribution_accuracy}}<br>
-        Total Saves: {{$playerDetail->total_saves}}<br>
-        Total Clearances: {{$playerDetail->total_clearances}}<br>
-        Yellow/Red Card: {{$playerDetail->yellow_red_card}}<br>
-        <hr>
+    <div id="content">
+        <!-- Mission Statement -->
+        <div class="mission text-center block block-pd-sm block-bg-noise">
+            <div class="container">
+                <h4 class="text-shadow-white">
+                    Name: {{$playerDetail->name}}<br>
+                    Age: {{$playerDetail->age}}<br>
+                    Height: {{$playerDetail->height}}<br>
+                    Country: {{$playerDetail->country}}<br>
+                    Team: {{$playerDetail->team}}<br>
+                    Appearance: {{$playerDetail->appearance}}<br>
+                    Clean Sheets: {{$playerDetail->clean_sheets}}<br>
+                    Goal Conceded: {{$playerDetail->goal_conceded}}<br>
+                    Penalty Saves: {{$playerDetail->penalty_saves}}<br>
+                    Distribution Accuracy: {{$playerDetail->distribution_accuracy}}<br>
+                    Total Saves: {{$playerDetail->total_saves}}<br>
+                    Total Clearances: {{$playerDetail->total_clearances}}<br>
+                    Yellow/Red Card: {{$playerDetail->yellow_red_card}}<br>
+                </h4>
+            </div>
+        </div>
+    </div>
 
-        <form action="/saveplayerRating" method="post">
+        <form action="/savePlayerRating" method="post">
             {{csrf_field()}}
             Skills:
             <select title='player_rating' name="skills">

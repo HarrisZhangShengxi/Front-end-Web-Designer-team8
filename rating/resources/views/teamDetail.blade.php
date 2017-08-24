@@ -21,95 +21,98 @@
     </style>
 </head>
 
-    Team: {{$team->name}}<br>
-    Shooting Accuracy: {{$team->shooting_accuracy}}<br>
-    Goals: {{$team->goals}}<br>
-    Passing Accuracy: {{$team->passing_accuracy}}<br>
-    Assists: {{$team->assists}}<br>
-    Save: {{$team->save}}<br>
-    Tackle Success: {{$team->tackle_success}}<br>
-    Yellow Card: {{$team->yellow_card}}<br>
-    Red Card: {{$team->red_card}}<br>
-    <hr>
-    Former Rating:<br>
-    Overall:<br>
-    Attack: {{$info['attackAverage']}}<br>
-    Defence: {{$info['defenceAverage']}}<br>
-    Teamplay: {{$info['teamPlayAverage']}}<br>
-    Discipline: {{$info['disciplineAverage']}}<br>
-    <hr>
-
-    @foreach($players as $item)
-        <table>
-            <col width="200">
-            <tr>
-                <td>
-                    <a href="/playerDetail?id={{$item->player_id}}">
-                        {{$item->name}}
-                    </a>
-                </td>
-            </tr>
-        </table>
-    <hr>
-    @endforeach
-
-    <form action="/saveTeamRating" method="post">
-        {{csrf_field()}}
-        Attack:
-        <div class="box" id="attackStar" data-type="attack">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+<div id="content">
+    <!-- Mission Statement -->
+    <div class="mission text-center block block-pd-sm block-bg-noise">
+        <div class="container">
+            <h4 class="text-shadow-white">
+                Team: {{$team->name}}<br>
+                Shooting Accuracy: {{$team->shooting_accuracy}}<br>
+                Goals: {{$team->goals}}<br>
+                Passing Accuracy: {{$team->passing_accuracy}}<br>
+                Assists: {{$team->assists}}<br>
+                Save: {{$team->save}}<br>
+                Tackle Success: {{$team->tackle_success}}<br>
+                Yellow Card: {{$team->yellow_card}}<br>
+                Red Card: {{$team->red_card}}<br>
+            </h4>
         </div>
-        <input type="text" name="attack">
-        <div id="attackScore"></div>
-<br>
+    </div>
 
-        <input type='hidden' name='teamratingId' value='{{$team->id}}'>
-        <input type='hidden' name='teamId' value='{{$team->team_id}}'>
-        <br>
-        Defence:
-            <div class="box" id="defenceStar" data-type="defence">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </div>
-        <input type="text" name="defence">
-        <div id="defenceScore"></div>
+    <div class="showcase block block-border-bottom-grey">
+        <div class="container">
+            <h4>
+                Overall:<br>
+                Attack: {{$info['attackAverage']}}<br>
+                Defence: {{$info['defenceAverage']}}<br>
+                Teamplay: {{$info['teamPlayAverage']}}<br>
+                Discipline: {{$info['disciplineAverage']}}<br>
+            </h4>
+        </div>
+    </div>
+    <div class="services block block-bg-gradient block-border-bottom">
+        <div class="container">
+            <h4 class="text-shadow-white" align="left">
+                <form action="/saveTeamRating" method="post">
+                    {{csrf_field()}}
+                    Attack:
+                    <div class="box" id="attackStar" data-type="attack">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
+                    <input type="hidden" name="attack">
+                    <div id="attackScore"></div>
+                    <br>
 
-        <br>
-        Teamplay:
-            <div class="box" id="teamplayStar" data-type="teamplay">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </div>
-        <input type="text" name="teamplay">
-        <div id="teamplayScore"></div>
-        {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
-        <br>
-        Discipline:
-            <div class="box" id="disciplineStar" data-type="discipline">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </div>
-        <input type="text" name="discipline">
-        <div id="disciplineScore"></div>
-        <br>
-        Comment: <input type='text' name='comment' value='{{$team->comment}}'><br>
-        <input type='submit' value='Rate!'>
-    </form>
+                    <input type='hidden' name='teamratingId' value='{{$team->id}}'>
+                    <input type='hidden' name='teamId' value='{{$team->team_id}}'>
+                    <br>
+                    Defence:
+                    <div class="box" id="defenceStar" data-type="defence">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
+                    <input type="hidden" name="defence">
+                    <div id="defenceScore"></div>
 
+                    <br>
+                    Teamplay:
+                    <div class="box" id="teamplayStar" data-type="teamplay">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
+                    <input type="hidden" name="teamplay">
+                    <div id="teamplayScore"></div>
+                    {{--<input type='' name='teamPlay' value='{{$team->team_play}}'>--}}
+                    <br>
+                    Discipline:
+                    <div class="box" id="disciplineStar" data-type="discipline">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </div>
+                    <input type="hidden" name="discipline">
+                    <div id="disciplineScore"></div>
+                    <br>
+                    Comment: <br>
+                    <input type='text' name='comment' width="200" height="100" value='{{$team->comment}}'><br><br>
+                    <button type="submit" class="btn btn-more btn-lg"><i class="fa fa-commenting-o"></i>Rate!</button>
+                </form>
 
+            </h4>
+        </div>
+    </div>
 
 @endsection
 @section('script')
@@ -125,7 +128,7 @@
             }
 
             $("input[name='" + type +"']").val(parseInt(index) + 1);
-            $("#" + type + "Score").text("Choosen Score:" + (parseInt(index) + 1));
+            $("#" + type + "Score").text( (parseInt(index) + 1) + " "+ "Star(s)" );
         });
     </script>
 @endsection

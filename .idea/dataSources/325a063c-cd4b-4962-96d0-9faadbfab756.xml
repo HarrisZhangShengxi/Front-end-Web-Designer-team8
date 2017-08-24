@@ -90,7 +90,6 @@
     <column id="30" parent="12" name="comment">
       <Position>10</Position>
       <DataType>varchar(5000)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="31" parent="12" name="remember_token">
       <Position>11</Position>

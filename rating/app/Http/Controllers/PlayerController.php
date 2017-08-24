@@ -8,27 +8,26 @@ use Illuminate\Http\Request;
 class PlayerController extends Controller
 {
     //display all players
-    public static function playerList() {
+    public static function playerList()
+    {
         $playerlist = Players::all();
         return view('playerList', compact('playerlist'));
     }
 
     //player detail
-    public function playerDetail(Request $request){
+    public function playerDetail(Request $request)
+    {
 
         $id = $request->get('id');
         $playerDetail = Players::where('player_id', $id)->first();
-        $position = $playerDetail -> position;
+        $position = $playerDetail->position;
         if ($position == "goalkeeper") {
             return view('goalkeeperDetail', compact('playerDetail'));
-        }
-        elseif ($position == "defender") {
+        } elseif ($position == "defender") {
             return view('defenderDetail', compact('playerDetail'));
-        }
-        elseif ($position == "midfielder") {
+        } elseif ($position == "midfielder") {
             return view('midfielderDetail', compact('playerDetail'));
-        }
-        else {
+        } else {
             return view('forwardDetail', compact('playerDetail'));
         }
     }
@@ -36,9 +35,14 @@ class PlayerController extends Controller
 
 //
     //save rating
-    public function savePlayerRating(Request $request) {
+    public function savePlayerRating(Request $request)
+    {
         $saveResult = \App\PlayerRating::savePlayerRating($request);
         echo $saveResult;
+        if ($saveResult) {
+            return view('rateSuccess');
+        } else {
+            //error page
+        }
     }
-
 }

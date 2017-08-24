@@ -50,7 +50,7 @@ Route::post('/savePlayerRating', 'PlayerController@savePlayerRating');
 //Search
 Route::get("/searching", "SearchController@searching");
 Route::get("/searchRatingList", "SearchController@searching");
-Route::get("/playerRatingList", "SearchController@searching");
+//Route::get("/playerRatingList", "SearchController@searching");
 Route::get("/teamRatingList", "SearchController@searching");
 
 Route::get("/userCenter", "UserController@user");

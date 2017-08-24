@@ -329,7 +329,6 @@
                                     </h4>
                                     </div>
                                     <div>
-                                        {{--<a href="{{url('teamList')}}" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>--}}
                                         <button type="submit" class="btn btn-more btn-lg"> <i class="fa fa-search"></i>
                                             Search</button>
                                     </div>

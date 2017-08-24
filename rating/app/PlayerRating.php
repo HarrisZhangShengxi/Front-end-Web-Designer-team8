@@ -24,20 +24,22 @@ class PlayerRating extends Model
     public static function savePlayerRating(Request $request) {
 //        $teamratingId = $request->get("teamratingId");
         $playerId = $request->get("playerId");
-        $attack = $request->get("attack");
+        $skills = $request->get("skills");
 //        $attackRating = $request->get("attackRating");
+        $phyical = $request->get("phyical");
         $defence = $request->get("defence");
+        $weakfoot = $request->get("weakfoot");
         $teamPlay = $request->get("teamplay");
-        $discipline = $request->get("discipline");
         $comment = $request->get("comment");
 
         $saveResult = \App\PlayerRating::create([
 //            "id"=> $teamratingId,
             "player_id"=> $playerId,
-            "attack" => $attack,
+            "skills" => $skills,
+            "phyical" => $phyical,
             "defence" => $defence,
+            "weak_foot"=> $weakfoot,
             "team_play" => $teamPlay,
-            "discipline"=> $discipline,
             "comment"=> $comment,
         ]);
 
