@@ -54,3 +54,12 @@ Route::get("/searchRatingList", "SearchController@searching");
 Route::get("/teamRatingList", "SearchController@searching");
 
 Route::get("/userCenter", "UserController@user");
+
+//about us
+Route::get('/mac699team8', function (){
+    return view(('mac699team8'));
+});
+
+Route::get('/contact', function (){
+    return view(('contact'));
+});

@@ -44,6 +44,21 @@
             </div>
         </div>
     </div>
+    {{--former rating--}}
+    <div class="showcase block block-border-bottom-grey">
+        <div class="container">
+            <h4>
+                Overall:<br>
+                Skills: {{$info['skillsAverage']}}<br>
+                Phyical: {{$info['phyicalAverage']}}<br>
+                Attack: {{$info['attackAverage']}}<br>
+                Defence: {{$info['defenceAverage']}}<br>
+                Weak Foot: {{$info['weakfootAverage']}}<br>
+                Teamplay: {{$info['teamPlayAverage']}}<br>
+
+            </h4>
+        </div>
+    </div>
 
     <form action="/savePlayerRating" method="post">
         {{csrf_field()}}

@@ -27,6 +27,7 @@ class PlayerRating extends Model
         $skills = $request->get("skills");
 //        $attackRating = $request->get("attackRating");
         $phyical = $request->get("phyical");
+        $attack = $request->get ("attack");
         $defence = $request->get("defence");
         $weakfoot = $request->get("weakfoot");
         $teamPlay = $request->get("teamplay");
@@ -37,6 +38,7 @@ class PlayerRating extends Model
             "player_id"=> $playerId,
             "skills" => $skills,
             "phyical" => $phyical,
+            "attack" => $attack,
             "defence" => $defence,
             "weak_foot"=> $weakfoot,
             "team_play" => $teamPlay,
