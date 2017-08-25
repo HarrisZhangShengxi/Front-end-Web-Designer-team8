@@ -16,7 +16,7 @@
             <div class="container">
                 <h4>
                     @foreach($teamlist as $item)
-                        <a href="/teamDetail?id={{$item->player_id}}">
+                        <a href="/teamDetail?id={{$item->team_id}}">
                             {{$item->name}}
                         </a><br>
                     @endforeach

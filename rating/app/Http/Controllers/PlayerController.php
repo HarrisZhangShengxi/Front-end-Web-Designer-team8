@@ -76,7 +76,7 @@ class PlayerController extends Controller
     public function savePlayerRating(Request $request)
     {
         $saveResult = \App\PlayerRating::savePlayerRating($request);
-        echo $saveResult;
+//        echo $saveResult;
         if ($saveResult) {
             return view('rateSuccess');
         } else {
